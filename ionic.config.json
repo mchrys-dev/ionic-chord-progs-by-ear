@@ -1,0 +1,7 @@
+{
+  "name": "chord-progs-ear",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
