@@ -8,8 +8,22 @@
 
 <ion-content [fullscreen]="true">
   <div id="container">
-    <ion-button routerLink="/settings">
-      test
-    </ion-button>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" offset="3">
+          <ion-button routerLink="/training">
+            {{ getText('training') }}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6" offset="3">
+          <ion-button routerLink="/settings">
+            {{ getText('settings') }}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>

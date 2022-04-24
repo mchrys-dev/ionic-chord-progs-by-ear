@@ -15,6 +15,10 @@ export class TextsService {
     settings: {
       en: 'Settings',
       fr: 'Options'
+    },
+    training: {
+      en: 'Training',
+      fr: 'Entraînement'
     }
   };
 
