@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TextsService } from '../services/texts.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private textsService: TextsService) {
+     
+  }
+
+  public getText(key: string) {
+    return this.textsService.getText(key);
+  }
 
 }
