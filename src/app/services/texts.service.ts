@@ -19,6 +19,10 @@ export class TextsService {
     training: {
       en: 'Training',
       fr: 'Entraînement'
+    },
+    selLevel: {
+      en: 'Selected level',
+      fr: 'Niveau sélectionné'
     }
   };
 
