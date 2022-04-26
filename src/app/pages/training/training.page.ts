@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { LevelsService } from 'src/app/services/levels.service';
+import { PhrasesService } from 'src/app/services/phrases.service';
+import { StorageService } from 'src/app/services/storage.service';
 import { TextsService } from 'src/app/services/texts.service';
 
 @Component({
@@ -8,13 +11,34 @@ import { TextsService } from 'src/app/services/texts.service';
 })
 export class TrainingPage implements OnInit {
 
-  constructor(private textsService: TextsService) { }
+  private levels = [];
+  private selLevel = {
+    id: 0,
+    description: {
+      en: '',
+      fr: ''
+    }
+  };
+  private phrases = [];
+
+  constructor(
+    private textsService: TextsService,
+    private storageService: StorageService,
+    private levelsService: LevelsService,
+    private phrasesService: PhrasesService
+  ) { }
 
   ngOnInit() {
+    this.levels = this.levelsService.getAll();
+    this.selLevel = this.levels.find(level => level.id === this.storageService.getSelLevelId());
+    this.phrases = this.phrasesService.getAll().filter(phrase => phrase.levelId === this.selLevel.id);
   }
 
   public getText(key: string) {
     return this.textsService.getText(key);
   }
 
+  public generateProg() {
+    alert('Generate prog!');
+  }
 }

@@ -12,13 +12,25 @@ export class TextsService {
       en: 'Chord progs by ear',
       fr: 'Progressions d\'accords à l\'oreille'
     },
-    ok: {
-      en: 'OK',
-      fr: 'OK'
-    },
     cancel: {
       en: 'Cancel',
       fr: 'Annuler'
+    },
+    checkAns: {
+      en: 'Check answers',
+      fr: 'Corriger'
+    },
+    listenAgain: {
+      en: 'Listen again',
+      fr: 'Réécouter'
+    },
+    newProg: {
+      en: 'New chord progression',
+      fr: 'Nouvelle progression d\'accords'
+    },
+    ok: {
+      en: 'OK',
+      fr: 'OK'
     },
     selLevel: {
       en: 'Selected level',
@@ -27,6 +39,10 @@ export class TextsService {
     settings: {
       en: 'Settings',
       fr: 'Options'
+    },
+    showRight: {
+      en: 'Display right answers',
+      fr: 'Afficher les bonnes réponses'
     },
     training: {
       en: 'Training',

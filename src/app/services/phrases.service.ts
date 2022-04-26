@@ -31,4 +31,8 @@ export class PhrasesService {
   ];
 
   constructor() { }
+
+  getAll() {
+    return this.phrases;
+  }
 }
