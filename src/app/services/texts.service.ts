@@ -12,6 +12,18 @@ export class TextsService {
       en: 'Chord progs by ear',
       fr: 'Progressions d\'accords à l\'oreille'
     },
+    ok: {
+      en: 'OK',
+      fr: 'OK'
+    },
+    cancel: {
+      en: 'Cancel',
+      fr: 'Annuler'
+    },
+    selLevel: {
+      en: 'Selected level',
+      fr: 'Niveau sélectionné'
+    },
     settings: {
       en: 'Settings',
       fr: 'Options'
@@ -20,10 +32,7 @@ export class TextsService {
       en: 'Training',
       fr: 'Entraînement'
     },
-    selLevel: {
-      en: 'Selected level',
-      fr: 'Niveau sélectionné'
-    }
+    
   };
 
   constructor() { 

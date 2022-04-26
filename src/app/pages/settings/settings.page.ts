@@ -12,7 +12,13 @@ export class SettingsPage implements OnInit {
 
   private lang: string;
   private levels = [];
-  private selLevel = {};
+  private selLevel = {
+    id: 0,
+    description: {
+      en: '',
+      fr: ''
+    }
+  };
 
   constructor(
     private textsService: TextsService,
@@ -24,6 +30,10 @@ export class SettingsPage implements OnInit {
     this.lang = this.textsService.getLanguage();
     this.levels = this.levelsService.getAll();
     this.selLevel = this.levels.find(level => level.id === this.storageService.getSelLevelId());
+  }
+
+  ngOnDestroy() {
+    this.storageService.setSelLevelId(this.selLevel.id);
   }
 
   public getText(key: string) {

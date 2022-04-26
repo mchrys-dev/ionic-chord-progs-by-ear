@@ -5,18 +5,21 @@ import { Injectable } from '@angular/core';
 })
 export class StorageService {
 
-  private selLevelId: number;
+  private selLevelId: number = 1;
 
   constructor() {
-    
+     
   }
 
   getSelLevelId() {
-    localStorage.getItem('selLevellId') === null ? this.selLevelId = 1 : this.selLevelId = parseInt(localStorage.getItem('selLevelId'));
+    if(localStorage.getItem('selLevelId') !== null) {
+      this.selLevelId = parseInt(localStorage.getItem('selLevelId'));
+    }
     return this.selLevelId;
   }
 
   setSelLevelId(id: number) {
+    this.selLevelId = id;
     localStorage.setItem('selLevelId', id.toString());
   }
 }
