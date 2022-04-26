@@ -8,5 +8,33 @@
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="2" offset="1" class="ion-text-center">
+        I
+      </ion-col>
 
+      <ion-col *ngFor="let item of  [1, 2, 3, 4]" size="2">
+        <ion-button>{{ item }}</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <ion-button class="ion-text-wrap">Nouvelle progression d'accords</ion-button>
+      </ion-col>
+
+      <ion-col size="10" offset="1">
+        <ion-button class="ion-text-wrap">Réécouter</ion-button>
+      </ion-col>
+      
+      <ion-col size="10" offset="1">
+        <ion-button class="ion-text-wrap">Corriger</ion-button>
+      </ion-col>
+
+      <ion-col size="10" offset="1">
+        <ion-button class="ion-text-wrap">Afficher les bonnes réponses</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
