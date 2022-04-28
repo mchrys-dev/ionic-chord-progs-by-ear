@@ -20,6 +20,7 @@ export class TrainingPage implements OnInit {
     }
   };
   private phrases = [];
+  private selPhrase: Object;
 
   constructor(
     private textsService: TextsService,
@@ -39,6 +40,7 @@ export class TrainingPage implements OnInit {
   }
 
   public generateProg() {
-    alert('Generate prog!');
+    this.selPhrase = this.phrases[Math.floor(Math.random()*this.phrases.length)];
+    console.log(this.selPhrase);
   }
 }
