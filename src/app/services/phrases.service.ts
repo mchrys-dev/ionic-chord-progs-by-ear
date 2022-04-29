@@ -10,22 +10,26 @@ export class PhrasesService {
     {
       id: 1,
       chordIds: [1, 4, 1, 5, 1],
+      respChordIds: [1, 4, 5],
       levelId: 1
     },
     {
       id: 2,
       chordIds: [1, 5, 1, 4, 1],
+      respChordIds: [1, 4, 5],
       levelId: 1
     },
     // niveau 2
     {
       id: 3,
       chordIds: [1, 6, 4, 5, 1],
+      respChordIds: [1, 4, 5, 6],
       levelId: 2
     },
     {
       id: 4,
       chordIds: [1, 6, 4, 5, 6],
+      respChordIds: [1, 4, 5, 6],
       levelId: 2
     }
   ];

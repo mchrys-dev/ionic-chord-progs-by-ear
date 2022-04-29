@@ -6,6 +6,10 @@ import { Injectable } from '@angular/core';
 export class ChordsService {
 
   private chords = [
+    {
+      id: 0,
+      name: ''
+    },
     // Accords diatoniques en majeur
     {
       id: 1,
