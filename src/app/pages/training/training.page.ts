@@ -43,6 +43,25 @@ export class TrainingPage implements OnInit {
     {}, {}, {}, {}
   ];
 
+  public feedbackIcons = [
+    {
+      icon: '',
+      color: ''
+    },
+    {
+      icon: 'close-outline',
+      color: 'success'
+    },
+    {
+      icon: 'close-outline',
+      color: 'success'
+    },
+    {
+      icon: 'close-outline',
+      color: 'success'
+    }
+  ];
+
   constructor(
     private textsService: TextsService,
     private storageService: StorageService,

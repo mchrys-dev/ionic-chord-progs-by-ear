@@ -22,6 +22,15 @@
     </ion-row>
 
     <ion-row>
+      <ion-col size="2" offset="1">
+
+      </ion-col>
+      <ion-col *ngFor="let item of [].constructor(4); let i = index" size="2" class="ion-text-center">
+        <ion-icon name="{{ feedbackIcons[i].icon }}" color="{{ feedbackIcons[i].color }}"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
       <ion-col size="10" offset="1">
         <ion-button class="ion-text-wrap" (click)="generateProg()" [disabled]="buttonsDisabled[0]">
           {{ getText('newProg') }}
@@ -49,4 +58,5 @@
   </ion-grid>
 </ion-content>
 
+<div>{{ getQuestChords() | json }}</div>
 {{ responses | json }}
