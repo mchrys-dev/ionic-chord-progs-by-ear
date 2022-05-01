@@ -32,6 +32,10 @@ export class TextsService {
       en: 'OK',
       fr: 'OK'
     },
+    resetScore: {
+      en: 'Reset the score',
+      fr: 'Réinitialiser le score'
+    },
     selLevel: {
       en: 'Selected level',
       fr: 'Niveau sélectionné'

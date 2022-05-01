@@ -174,6 +174,10 @@ export class TrainingPage implements OnInit {
     this.showRightAns = true;
   }
 
+  public modalTest() {
+    alert('modal clicked!');
+  }
+
   public getFirstChord() {
     let firstChord = this.chords.find(chord => chord.id === this.selPhrase.chordIds[0]);
     return firstChord;

@@ -11,7 +11,7 @@
   <ion-grid>
     <ion-row>
       <ion-col size="10" offset="1" class="ion-text-center">
-        Score: {{ rightAnsStats.length }} / {{ questStats.length }} ({{ getPercentage(rightAnsStats.length, questStats.length) }}%)
+        Score: {{ rightAnsStats.length }} / {{ questStats.length }} ({{ getPercentage(rightAnsStats.length, questStats.length) }}%) 
       </ion-col>
     </ion-row>
 
@@ -71,6 +71,28 @@
           {{ getText('showRight') }}
         </ion-button>
       </ion-col>
+
+      <ion-col size="10" offset="1">
+        <ion-button class="ion-text-wrap" [disabled]="questStats.length === 0">
+          {{ getText('resetScore') }}
+        </ion-button>
+      </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<ion-modal [isOpen]="true">
+  <ng-template>
+    <ion-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="ion-text-center" size="10" offset="1">
+            <ion-button (click)="modalTest()">test</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+
