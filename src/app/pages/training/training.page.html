@@ -9,13 +9,19 @@
 
 <ion-content>
   <ion-grid>
+    <ion-row>
+      <ion-col size="10" offset="1" class="ion-text-center">
+        Score: {{ rightAnsStats.length }} / {{ questStats.length }} ({{ getPercentage(rightAnsStats.length, questStats.length) }}%)
+      </ion-col>
+    </ion-row>
+
     <ion-row class="ion-align-items-center">
       <ion-col size="2" offset="1" class="ion-text-center">
         {{ getFirstChord().name }}
       </ion-col>
 
       <ion-col *ngFor="let item of [].constructor(4); let i = index" size="2">
-        <ion-select name="response-select + i" [(ngModel)]="responses[i]" okText="{{ getText('ok') }}" cancelText="{{ getText('cancel') }}">
+        <ion-select name="response-select + i" [(ngModel)]="responses[i]" disabled="{{ selectsDisabled }}" okText="{{ getText('ok') }}" cancelText="{{ getText('cancel') }}">
           <ion-select-option *ngFor="let chord of getRespChords()" [value]="chord">{{ chord.name }}</ion-select-option>
         </ion-select>
       </ion-col>
@@ -25,9 +31,20 @@
       <ion-col size="2" offset="1">
 
       </ion-col>
-      <ion-col *ngFor="let item of [].constructor(4); let i = index" size="2" class="ion-text-center">
-        <ion-icon name="{{ feedbackIcons[i].icon }}" color="{{ feedbackIcons[i].color }}"></ion-icon>
-      </ion-col>
+      <ng-container *ngIf="isFeedbackVisible">
+        <ion-col *ngFor="let item of [].constructor(4); let i = index" size="2" class="ion-text-center">
+          <ion-icon name="{{ feedbackIcons[i].icon }}" color="{{ feedbackIcons[i].color }}"></ion-icon>
+        </ion-col>
+      </ng-container>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="1"></ion-col>
+      <ng-container *ngIf="showRightAns">
+        <ion-col *ngFor="let chord of getPhraseChords()" size="2" class="ion-text-center">
+          {{ chord.name }}
+        </ion-col>
+      </ng-container>
     </ion-row>
 
     <ion-row>
@@ -44,19 +61,16 @@
       </ion-col>
 
       <ion-col size="10" offset="1">
-        <ion-button class="ion-text-wrap" [disabled]="buttonsDisabled[2]">
+        <ion-button class="ion-text-wrap" (click)="checkAnswers()" [disabled]="buttonsDisabled[2]">
           {{ getText('checkAns') }}
         </ion-button>
       </ion-col>
 
       <ion-col size="10" offset="1">
-        <ion-button class="ion-text-wrap" [disabled]="buttonsDisabled[3]">
+        <ion-button class="ion-text-wrap" (click)="showRight()" [disabled]="buttonsDisabled[3]">
           {{ getText('showRight') }}
         </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
-
-<div>{{ getQuestChords() | json }}</div>
-{{ responses | json }}

@@ -50,7 +50,6 @@ export class WebaudioService {
     source.buffer = buffer;
 
     this.sources.push(source);
-    console.log(this.sources);
 
     source.connect(this.audioCtx.destination);
     source.start(this.audioCtx.currentTime + time);

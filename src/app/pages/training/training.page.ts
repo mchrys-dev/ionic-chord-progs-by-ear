@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { findItemLabel } from '@ionic/core/dist/types/utils/helpers';
 import { ChordsService } from 'src/app/services/chords.service';
+import { FunctionsService } from 'src/app/services/functions.service';
 import { KeysService } from 'src/app/services/keys.service';
 import { LevelsService } from 'src/app/services/levels.service';
 import { PhrasesService } from 'src/app/services/phrases.service';
@@ -33,34 +34,41 @@ export class TrainingPage implements OnInit {
   private chords = [];
   private keys = [];
 
+  public selectsDisabled = true;
   public buttonsDisabled = [
-    false, false, false, true
+    false, true, true, true
   ];
   public questions = [
-    {}, {}, {}, {}
+    {id: 0}, {id: 0}, {id: 0}, {id: 0}
   ];
   public responses = [
-    {}, {}, {}, {}
+    {id: 0}, {id: 0}, {id: 0}, {id: 0}
   ];
 
+  public isFeedbackVisible = false;
   public feedbackIcons = [
     {
       icon: '',
       color: ''
     },
     {
-      icon: 'close-outline',
-      color: 'success'
+      icon: '',
+      color: ''
     },
     {
-      icon: 'close-outline',
-      color: 'success'
+      icon: '',
+      color: ''
     },
     {
-      icon: 'close-outline',
-      color: 'success'
-    }
+      icon: '',
+      color: ''
+    } 
   ];
+
+  public showRightAns = false;
+
+  public questStats = [];
+  public rightAnsStats = [];
 
   constructor(
     private textsService: TextsService,
@@ -69,7 +77,8 @@ export class TrainingPage implements OnInit {
     private phrasesService: PhrasesService,
     private chordsService: ChordsService,
     private keysService: KeysService,
-    private webAudioService: WebaudioService
+    private webAudioService: WebaudioService,
+    private functionsService: FunctionsService
   ) { }
 
   ngOnInit() {
@@ -85,6 +94,9 @@ export class TrainingPage implements OnInit {
       respChordIds: [0],
       levelId: 0
     };
+
+    this.questStats = this.storageService.getQuestStats();
+    this.rightAnsStats = this.storageService.getRightAnsStats();
   }
 
   public getText(key: string) {
@@ -92,9 +104,26 @@ export class TrainingPage implements OnInit {
   }
 
   public generateProg() {
-    this.buttonsDisabled[0] = true;
+    this.isFeedbackVisible = false;
+    this.showRightAns = false;
+    this.selectsDisabled = false;
+    this.buttonsDisabled = [true, false, false, true];
+    this.responses = [
+      {id: 0}, {id: 0}, {id: 0}, {id: 0}
+    ];
+
     this.selPhrase = this.phrases[Math.floor(Math.random()*this.phrases.length)];
     this.playPhrase();
+
+    for(let i=0; i<this.questions.length; i++) {
+      this.questStats.push(
+        {
+          levelId: this.selLevel.id,
+          chordId: this.getQuestChords()[i].id
+        }
+      )
+    }
+    this.storageService.setQuestStats(this.questStats);
   }
 
   public playPhrase(this: any) {
@@ -108,6 +137,41 @@ export class TrainingPage implements OnInit {
     }.bind(this));
     // this.webAudioService.play(this.webAudioService[this.keys[0][this.phrasesChords[0].name]], 0);
     // this.webAudioService.play(this.webAudioService[this.keys[0][this.phrasesChords[1].name]], 1.5);
+  }
+
+  public checkAnswers() {
+    this.webAudioService.stopAll();
+    this.selectsDisabled = true;
+    this.isFeedbackVisible = true;
+
+    for(let i=0; i<this.responses.length; i++) {
+      if(this.responses[i] === this.getQuestChords()[i]) {
+        this.rightAnsStats.push(
+          {
+            levelId: this.selLevel.id,
+            chordId: this.responses[i].id
+          }
+        );
+        this.storageService.setRightAnsStats(this.rightAnsStats);
+
+        this.feedbackIcons[i].icon = 'checkmark-outline';
+        this.feedbackIcons[i].color = 'success';
+      } else {
+        this.feedbackIcons[i].icon = 'close-outline';
+        this.feedbackIcons[i].color = 'danger';
+      }
+    }
+
+    this.buttonsDisabled = [false, true, true, false];
+  }
+
+  public showRight() {
+    this.webAudioService.stopAll();
+    this.selectsDisabled = true;
+    this.isFeedbackVisible = false;
+    this.buttonsDisabled = [false, true, true, true];
+
+    this.showRightAns = true;
   }
 
   public getFirstChord() {
@@ -132,5 +196,9 @@ export class TrainingPage implements OnInit {
 
   public getRespChords() {
     return this.chords.filter(chord => this.selPhrase.respChordIds.includes(chord.id));
+  }
+
+  public getPercentage(num1, num2)  {
+    return this.functionsService.getPercentage(num1, num2);
   }
 }
