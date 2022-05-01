@@ -28,6 +28,10 @@ export class TextsService {
       en: 'New chord progression',
       fr: 'Nouvelle progression d\'accords'
     },
+    no: {
+      en: 'No',
+      fr: 'Non'
+    },
     ok: {
       en: 'OK',
       fr: 'OK'
@@ -35,6 +39,10 @@ export class TextsService {
     resetScore: {
       en: 'Reset the score',
       fr: 'Réinitialiser le score'
+    },
+    resetScoreQuest: {
+      en: 'Are you shure that you want to reset the score?',
+      fr: 'Êtes-vous sûr(e) de vouloir réinitialiser le score?'
     },
     selLevel: {
       en: 'Selected level',
@@ -52,7 +60,10 @@ export class TextsService {
       en: 'Training',
       fr: 'Entraînement'
     },
-    
+    yes: {
+      en: 'Yes',
+      fr: 'Oui'
+    }
   };
 
   constructor() { 

@@ -70,6 +70,8 @@ export class TrainingPage implements OnInit {
   public questStats = [];
   public rightAnsStats = [];
 
+  public isModalVisible = false;
+
   constructor(
     private textsService: TextsService,
     private storageService: StorageService,
@@ -174,8 +176,22 @@ export class TrainingPage implements OnInit {
     this.showRightAns = true;
   }
 
-  public modalTest() {
-    alert('modal clicked!');
+  public showModal() {
+    this.isModalVisible = true;
+  }
+
+  public closeModal() {
+    this.isModalVisible = false;
+  }
+
+  public resetStats() {
+    this.questStats = [];
+    this.rightAnsStats = [];
+
+    this.storageService.setQuestStats(this.questStats);
+    this.storageService.setRightAnsStats(this.rightAnsStats);
+
+    this.isModalVisible = false;
   }
 
   public getFirstChord() {
