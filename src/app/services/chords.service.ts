@@ -46,6 +46,10 @@ export class ChordsService {
     },
     {
       id: 9,
+      name: 'V'
+    },
+    {
+      id: 10,
       name: 'bVI'
     },
   ]

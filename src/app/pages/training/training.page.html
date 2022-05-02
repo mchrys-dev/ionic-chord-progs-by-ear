@@ -32,7 +32,7 @@
 
       </ion-col>
       <ng-container *ngIf="isFeedbackVisible">
-        <ion-col *ngFor="let item of [].constructor(4); let i = index" size="2" class="ion-text-center">
+        <ion-col *ngFor="let item of [].constructor(4); let i = index" size="2" class="feedback ion-text-center">
           <ion-icon name="{{ feedbackIcons[i].icon }}" color="{{ feedbackIcons[i].color }}"></ion-icon>
         </ion-col>
       </ng-container>
@@ -42,7 +42,7 @@
       <ion-col size="1"></ion-col>
       <ng-container *ngIf="showRightAns">
         <ion-col *ngFor="let chord of getPhraseChords()" size="2" class="ion-text-center">
-          {{ chord.name }}
+          <ion-text color="success">{{ chord.name }}</ion-text>
         </ion-col>
       </ng-container>
     </ion-row>

@@ -9,9 +9,12 @@ export class KeysService {
     {
       id: 1,
       I: 'C',
-      IV:'F',
+      i: 'Cm',
+      IV: 'F',
+      iv: 'Fm',
       V: 'G',
-      vi: 'Am'
+      bVI: 'Ab',
+      vi: 'Am',
     }
   ];
 
