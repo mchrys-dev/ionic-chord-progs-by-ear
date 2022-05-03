@@ -86,6 +86,26 @@ export class KeysService {
       bVI: 'C',
       vi: 'Csharpm',
     },
+    {
+      id: 9,
+      I: 'Ab',
+      i: 'Abm',
+      IV: 'Db',
+      iv: 'Dbm',
+      V: 'Eb',
+      bVI: 'Fb',
+      vi: 'Fm',
+    },
+    {
+      id: 10,
+      I: 'B',
+      i: 'Bm',
+      IV: 'E',
+      iv: 'Em',
+      V: 'Fsharp',
+      bVI: 'G',
+      vi: 'Gsharpm',
+    },
   ];
 
   constructor() { }

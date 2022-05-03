@@ -33,6 +33,7 @@ export class TrainingPage implements OnInit {
   };
   private chords = [];
   private keys = [];
+  private randKey = {};
 
   public selectsDisabled = true;
   public buttonsDisabled = [
@@ -115,6 +116,7 @@ export class TrainingPage implements OnInit {
     ];
 
     this.selPhrase = this.phrases[Math.floor(Math.random()*this.phrases.length)];
+    this.randKey = this.keys[Math.floor(Math.random()*this.keys.length)];
     this.playPhrase();
 
     for(let i=0; i<this.questions.length; i++) {
@@ -135,7 +137,7 @@ export class TrainingPage implements OnInit {
     this.webAudioService.sources = [];
     // On joue chaque source
     this.selPhrase.chordIds.forEach(function(this: any, chord: any, index: any) {
-      this.webAudioService.play(this.webAudioService[this.keys[7][this.getPhraseChords()[index].name]], 1.5*index);
+      this.webAudioService.play(this.webAudioService[this.randKey[this.getPhraseChords()[index].name]], 1.5*index);
     }.bind(this));
     // this.webAudioService.play(this.webAudioService[this.keys[0][this.phrasesChords[0].name]], 0);
     // this.webAudioService.play(this.webAudioService[this.keys[0][this.phrasesChords[1].name]], 1.5);
