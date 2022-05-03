@@ -15,7 +15,7 @@ export class WebaudioService {
   Am: any = null;
   Ab: any = null;
 
-  sounds: any[] = ['C', 'Cm', 'F', 'Fm', 'G', 'Ab', 'Am'];
+  sounds: any[] = ['C', 'Cm', 'Db', 'D', 'Dm', 'Eb', 'Em', 'F', 'Fm', 'G', 'Gm', 'Ab', 'Am', 'Bb', 'Bbm'];
   buffer: any = null;
   audioCtx = new AudioContext();
 

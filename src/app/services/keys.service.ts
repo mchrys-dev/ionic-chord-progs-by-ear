@@ -15,6 +15,26 @@ export class KeysService {
       V: 'G',
       bVI: 'Ab',
       vi: 'Am',
+    },
+    {
+      id: 2,
+      I: 'G',
+      i: 'Gm',
+      IV: 'C',
+      iv: 'Cm',
+      V: 'D',
+      bVI: 'Eb',
+      vi: 'Em',
+    },
+    {
+      id: 3,
+      I: 'F',
+      i: 'Fm',
+      IV: 'Bb',
+      iv: 'Bbm',
+      V: 'C',
+      bVI: 'Db',
+      vi: 'Dm',
     }
   ];
 

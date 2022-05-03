@@ -135,7 +135,7 @@ export class TrainingPage implements OnInit {
     this.webAudioService.sources = [];
     // On joue chaque source
     this.selPhrase.chordIds.forEach(function(this: any, chord: any, index: any) {
-      this.webAudioService.play(this.webAudioService[this.keys[0][this.getPhraseChords()[index].name]], 1.5*index);
+      this.webAudioService.play(this.webAudioService[this.keys[1][this.getPhraseChords()[index].name]], 1.5*index);
     }.bind(this));
     // this.webAudioService.play(this.webAudioService[this.keys[0][this.phrasesChords[0].name]], 0);
     // this.webAudioService.play(this.webAudioService[this.keys[0][this.phrasesChords[1].name]], 1.5);
