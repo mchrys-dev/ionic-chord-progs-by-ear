@@ -19,6 +19,13 @@ export class LevelsService {
         en: 'vi or bVI',
         fr: 'vi ou bVI'
       }
+    },
+    {
+      id: 3,
+      description: {
+        en: 'ii',
+        fr: 'ii'
+      }
     }
   ]
 
