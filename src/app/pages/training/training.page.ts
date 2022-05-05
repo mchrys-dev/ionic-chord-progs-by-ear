@@ -217,7 +217,17 @@ export class TrainingPage implements OnInit {
   }
 
   public getRespChords() {
-    return this.chords.filter(chord => this.selPhrase.respChordIds.includes(chord.id));
+    let respChords = [];
+    let chord = {};
+
+    this.selPhrase.respChordIds.forEach(function(id) {
+      chord = this.chords.find(chord => chord.id === id);
+      respChords.push(chord);
+    }.bind(this));
+
+    return respChords;
+
+    // return this.chords.filter(chord => this.selPhrase.respChordIds.includes(chord.id));
   }
 
   public getPercentage(num1, num2)  {

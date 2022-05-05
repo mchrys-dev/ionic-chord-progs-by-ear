@@ -147,6 +147,49 @@ export class PhrasesService {
       respChordIds: [1, 2, 4, 5, 6],
       levelId: 3
     },
+    // Niveau 4
+    {
+      id: 24,
+      chordIds: [1, 6, 3, 4, 5],
+      respChordIds: [1, 2, 3, 4, 5, 6],
+      levelId: 4
+    },
+    {
+      id: 25,
+      chordIds: [1, 3, 4, 5, 1],
+      respChordIds: [1, 2, 3, 4, 5, 6],
+      levelId: 4
+    },
+    {
+      id: 26,
+      chordIds: [1, 3, 4, 5, 6],
+      respChordIds: [1, 2, 3, 4, 5, 6],
+      levelId: 4
+    },
+    {
+      id: 27,
+      chordIds: [1, 3, 4, 2, 5],
+      respChordIds: [1, 2, 3, 4, 5, 6],
+      levelId: 4
+    },
+    {
+      id: 28,
+      chordIds: [1, 2, 3, 4, 5],
+      respChordIds: [1, 2, 3, 4, 5, 6],
+      levelId: 4
+    },
+    {
+      id: 29,
+      chordIds: [1, 3, 6, 2, 5],
+      respChordIds: [1, 2, 3, 4, 5, 6],
+      levelId: 4
+    },
+    {
+      id: 30,
+      chordIds: [1, 3, 6, 4, 5],
+      respChordIds: [1, 2, 3, 4, 5, 6],
+      levelId: 4
+    },
   ];
 
   constructor() { }

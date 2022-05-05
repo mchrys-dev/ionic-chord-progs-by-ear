@@ -16,7 +16,7 @@ export class WebaudioService {
   Ab: any = null;
 
   sounds: any[] = [
-    'Cb', 'C', 'Cm', 'Csharpm', 'Db', 'Dbm', 'D', 'Dm', 'Eb', 'Ebm', 'E', 'Em', 'Fb', 'F', 'Fm', 'Fsharp', 'Fsharpm',
+    'Cb', 'C', 'Cm', 'Csharpm', 'Db', 'Dbm', 'D', 'Dm', 'Dsharpm', 'Eb', 'Ebm', 'E', 'Em', 'Fb', 'F', 'Fm', 'Fsharp', 'Fsharpm',
     'Gb', 'G', 'Gm', 'Gsharpm', 'Ab', 'Abm', 'A', 'Am', 'Bb', 'Bbm', 'B', 'Bm'
   ];
   buffer: any = null;
