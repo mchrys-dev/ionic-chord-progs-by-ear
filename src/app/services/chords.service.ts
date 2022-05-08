@@ -52,6 +52,10 @@ export class ChordsService {
       id: 10,
       name: 'bVI'
     },
+    {
+      id: 11,
+      name: 'Vsus4'
+    },
   ]
 
   constructor() { }
