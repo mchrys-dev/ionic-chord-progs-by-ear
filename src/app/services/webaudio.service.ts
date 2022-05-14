@@ -16,8 +16,10 @@ export class WebaudioService {
   Ab: any = null;
 
   sounds: any[] = [
-    'Cb', 'C', 'Cm', 'Csharpm', 'Db', 'Dbm', 'D', 'Dm', 'Dsharpm', 'Eb', 'Ebm', 'E', 'Em', 'Fb', 'F', 'Fm', 'Fsharp', 'Fsharpm',
-    'Gb', 'G', 'Gm', 'Gsharpm', 'Ab', 'Abm', 'A', 'Am', 'Bb', 'Bbm', 'B', 'Bm'
+    'Cb', 'C', 'Cm', 'Csus4', 'Csharpm', 'Db', 'Dbm', 'D', 'Dm', 'Dsus4', 'Dsharpm', 
+    'Eb', 'Ebm', 'Ebsus4', 'E', 'Em', 'Esus4', 'Fb', 'F', 'Fm', 'Fsus4', 'Fsharp', 'Fsharpm', 'Fsharpsus4',
+    'Gb', 'G', 'Gm', 'Gsus4', 'Gsharpm', 'Ab', 'Abm', 'A', 'Am', 'Asus4', 
+    'Bb', 'Bbm', 'Bbsus4', 'B', 'Bm', 'Bsus4'
   ];
   buffer: any = null;
   audioCtx = new AudioContext();
