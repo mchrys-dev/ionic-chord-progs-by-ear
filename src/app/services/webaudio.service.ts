@@ -16,10 +16,10 @@ export class WebaudioService {
   Ab: any = null;
 
   sounds: any[] = [
-    'Cb', 'C', 'Cm', 'Csus4', 'Csharpm', 'Db', 'Dbm', 'D', 'Dm', 'Dsus4', 'Dsharpm', 
-    'Eb', 'Ebm', 'Ebsus4', 'E', 'Em', 'Esus4', 'Fb', 'F', 'Fm', 'Fsus4', 'Fsharp', 'Fsharpm', 'Fsharpsus4',
-    'Gb', 'G', 'Gm', 'Gsus4', 'Gsharpm', 'Ab', 'Abm', 'A', 'Am', 'Asus4', 
-    'Bb', 'Bbm', 'Bbsus4', 'B', 'Bm', 'Bsus4'
+    'Cb', 'C', 'Cm', 'Csus4', 'C7', 'Csharpm', 'Db', 'Dbm', 'D', 'Dm', 'Dsus4', 'Dsharpm', 'D7',
+    'Eb', 'Ebm', 'Ebsus4', 'Eb7', 'E', 'Em', 'Esus4', 'E7', 'Fb', 'F', 'Fm', 'Fsus4', 'F7', 'Fsharp', 'Fsharpm', 'Fsharpsus4', 'fsharp7',
+    'Gb', 'G', 'Gm', 'Gsus4', 'G7', 'Gsharpm', 'Ab', 'Abm', 'A', 'Am', 'Asus4', 'A7', 
+    'Bb', 'Bbm', 'Bbsus4', 'Bb7', 'B', 'Bm', 'Bsus4', 'B7'
   ];
   buffer: any = null;
   audioCtx = new AudioContext();

@@ -41,6 +41,13 @@ export class LevelsService {
         fr: 'Vsus4'
       }
     },
+    {
+      id: 6,
+      description: {
+        en: 'V7',
+        fr: 'V7'
+      }
+    },
   ]
 
   constructor() { }
