@@ -60,6 +60,14 @@ export class ChordsService {
       id: 12,
       name: 'V7'
     },
+    {
+      id: 13,
+      name: 'V7/V'
+    },
+    {
+      id: 14,
+      name: 'V7/vi'
+    },
   ]
 
   constructor() { }

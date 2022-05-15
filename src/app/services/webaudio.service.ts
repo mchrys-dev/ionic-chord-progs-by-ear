@@ -16,9 +16,9 @@ export class WebaudioService {
   Ab: any = null;
 
   sounds: any[] = [
-    'Cb', 'C', 'Cm', 'Csus4', 'C7', 'Csharpm', 'Db', 'Dbm', 'D', 'Dm', 'Dsus4', 'Dsharpm', 'D7',
-    'Eb', 'Ebm', 'Ebsus4', 'Eb7', 'E', 'Em', 'Esus4', 'E7', 'Fb', 'F', 'Fm', 'Fsus4', 'F7', 'Fsharp', 'Fsharpm', 'Fsharpsus4', 'fsharp7',
-    'Gb', 'G', 'Gm', 'Gsus4', 'G7', 'Gsharpm', 'Ab', 'Abm', 'A', 'Am', 'Asus4', 'A7', 
+    'Cb', 'C', 'Cm', 'Csus4', 'C7', 'Csharpm', 'Csharp7', 'Db', 'Dbm', 'D', 'Dm', 'Dsus4', 'Dsharpm', 'Dsharp7', 'D7',
+    'Eb', 'Ebm', 'Ebsus4', 'Eb7', 'E', 'Em', 'Esus4', 'E7', 'Fb', 'F', 'Fm', 'Fsus4', 'F7', 'Fsharp', 'Fsharpm', 'Fsharpsus4', 'Fsharp7',
+    'Gb', 'G', 'Gm', 'Gsus4', 'G7', 'Gsharpm', 'Gsharp7', 'Ab', 'Abm', 'A', 'Am', 'Asus4', 'A7', 
     'Bb', 'Bbm', 'Bbsus4', 'Bb7', 'B', 'Bm', 'Bsus4', 'B7'
   ];
   buffer: any = null;

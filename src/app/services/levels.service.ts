@@ -48,6 +48,20 @@ export class LevelsService {
         fr: 'V7'
       }
     },
+    {
+      id: 7,
+      description: {
+        en: 'V7/V',
+        fr: 'V7/V'
+      }
+    },
+    {
+      id: 8,
+      description: {
+        en: 'V7/vi',
+        fr: 'V7/vi'
+      }
+    },
   ]
 
   constructor() { }
